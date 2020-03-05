@@ -46,7 +46,7 @@ module.exports.each = each;
  /** 
  * typeOf: Takes in a value, and defines the type of data the value is. Returns the type in a string.
  * 
- * @param : {any value} value : any value or data type
+ * @param : {value} value : any value or data type
  * 
  * @return: {a string} the type of value: the type of datatype the value is will be returned
  */
@@ -83,9 +83,9 @@ module.exports.typeOf = typeOf;
 /**
  * first: Takes in a array and number, and returns the nth number of first elements of an array.
  * 
- * param: {any array} array: the input array data that we're working with
+ * param: {array} array: the input array data that we're working with. If this value is not an array, nothing will be returned.
  * 
- * param : {any number} number: number repping the nth number of first elements that will be returned
+ * param : {number} number: number repping the nth number of first elements that will be returned. If this number is negative, nothing will be returned.
  * 
  *return: {a array} results array: first or nth number of first elements in the array
  * 
@@ -115,9 +115,9 @@ module.exports.first = first;
  /**
   * last: Takes in a array and number, and returns the nth number of last elements of an array.
   * 
-  * param: {any array} array: the input array data that we're working with
+  * param: {array} array: the input array data that we're working with.  If this value is not an array, nothing will be returned
   *
-  * param: {any number} number: number repping the nth number of last elements that will be returned
+  * param: {number} number: number repping the nth number of last elements that will be returned. If this number is negative, nothing will be returned.
   * 
   * return: {a array} finalResults array: last or nth number of last elements in the array
   * 
@@ -152,10 +152,10 @@ module.exports.last = last;
 /**
  * indexOf: Taks in a array and a value and returns the index of thevalue wesearched for.If it doesn'toccur, -1 is returned.
  * 
- * param: {any array} array: array of data to seach to value
- * param: {any value} value: the value you want to search for
+ * param: {array} array: array of data to seach to value
+ * param: {value} value: the value you want to search for
  * 
- * return: {a array or number} array or number: returns the index of the value we searched for, if it's not found, -1 will be returned
+ * return: {number} number: returns the numerical index of the value we searched for, if it's not found, -1 will be returned
  */
  
   function indexOf(array, value) {
@@ -171,8 +171,8 @@ module.exports.last = last;
  /** 
   * contains: Takes in a array and a value, and returns true if the value is found in the array, and false if it isn't.
   * 
-  * param: {any array} array: various dataypes inside of an array to be checked for value
-  * param: {any value} value: value to search the array for
+  * param: {array} array: various dataypes inside of an array to be checked for value
+  * param: {value} value: value to search the array for
   * 
   * return: {boolean } true of false: if value is found, true is returned. If it's not found, false is returned.
   * 
@@ -189,9 +189,9 @@ module.exports.contains = contains;
 /** 
  * unique: takes in a array with duplicates and removes all of the duplicates in it and returns a new unique array.
  * 
- * param: {any array} array: array with duplicates
+ * param: {array} array: array with duplicates
  * 
- * return: {any array} result array: array with no duplicates
+ * return: {array} result array: array with no duplicates
  */
  
  function unique(array) {
@@ -210,9 +210,9 @@ module.exports.unique = unique;
  * 
  * filter: Takes in a array and test function, and returns a new array that has been filtered with the test function.
  * 
- * param: {any array} array: an array of different datatypes and values
+ * param: {array} array: an array of different datatypes and values
  * 
- * param: {a function} test: test function used to filter out the collection
+ * param: {a function} test: test function used to filter out the collection by testing and filtering whatever we want it to with it's callback function.
  * 
  * return: {a array} filtered array: new filtered array of values without the filtered out values from the test function running on the original array
  * 
@@ -234,11 +234,11 @@ module.exports.filter = filter;
 /**
  * reject: Takes in a array and test function and returns a new array with all of the elements that didnt pass the test 
  * 
- * param: {any array or object} collection: any collection of data
+ * param: {array or object} collection: any collection of data
  * 
- * param: {any function} test function: used as a truth test on the collection of data
+ * param: {function} test function: used as a truth test on the collection of data
  * 
- * return: {any array} rejected array: new array of rejected items from our original collection after the truth test was run on it
+ * return: {array} rejected array: new array of rejected items from our original collection after the truth test was run on it
  * 
  */
  
@@ -257,10 +257,10 @@ module.exports.reject = reject;
 /**
  * partition: takes in a arrray and test function. Returns an array with two subarrays.One with all passing items and another with all failed items.
  * 
- * param: {any array} array: an array of items to test
- * param: {any function} test function: test function to act as a filter
+ * param: {array} array: an array of items to test
+ * param: {function} test function: test function to act as a filter
  * 
- * return: {any array} [passed, failed]:  an array of subarrays, one containing passed, and another containing failed
+ * return: {array} [passed, failed]:  an array of subarrays, one containing passed, and another containing failed
  */
  
  function partition(array, funct) {
@@ -279,9 +279,9 @@ module.exports.partition = partition;
 /**
  * map: Takes in a array and action function that acts on every element of the array, changing its value.
  * 
- * param: {any array or object} collection: any collection of data
+ * param: {array or object} collection: any collection of data
  * 
- * param: {any function} action: the function which acts on the collection and alters it
+ * param: {function} action: the function which acts on the collection and alters it
  * 
  * return: {a array} altered array: the new array with the altered elements inside of it
  * 
@@ -301,11 +301,11 @@ module.exports.map = map;
 /**
  * pluck: Takes a array and property, searches for the property in each array element, and returns a new array with the values of the property searched for.
  * 
- * param: {any array} array: array of object
+ * param: {array} array: array of object
  * 
- * param: {any property} prop: the key to search each object for
+ * param: {string} prop: the property key to search each object for
  * 
- * return: {any array} value[prop] : a new array with the values of the property key that we searched each object for
+ * return: {array} value[prop] : a new array with the values of the property key that we searched each object for
  * 
  */
  
@@ -320,9 +320,9 @@ module.exports.pluck = pluck;
 /**
  * every: Takes a array and test function. If all elements pass the test the ntrue will be returned, if not false will be returned.
  * 
- * param: {any array of objects} collection: a collection of data
+ * param: {array of objects} collection: a collection of data
  * 
- * param: {any function} funct: the function that acts as a truth test for the collection
+ * param: {function} funct: the function that acts as a truth test for the collection. If there is no test function, nothing will be tested and nothing will be returned.
  * 
  * return: {boolean} true or false: If ALL the values pass the test, then true will be returned. If not, false will be returned
  * 
@@ -347,7 +347,7 @@ module.exports.pluck = pluck;
   * 
   * param: {array or object} collection: a collection of data 
   * 
-  * param: {any function} funct: the function that acts as a truth test for the collection
+  * param: {function} funct: The function that acts as a truth test for the collection. If there is no test function, nothing will be tested and nothing will be returned. 
   * 
   * return: {boolean} If ONE OR MORE of the values pass the test, then true will be returned. If not, false will be returned
   * 
@@ -373,13 +373,13 @@ module.exports.some = some;
  * reduce: TAkes a array and function. runs the function over the array and will return a single value for the returned items. The type of data is determined by the seed.
  * 
  * 
- * param: {any array} array: array with a collection of data
+ * param: { array} array: array with a collection of data
  * 
- * param: {any function} funct: the function that will iteriate over the collection
+ * param: { function} func: the function that will iteriate over the collection
  *  
- * param: {any seed} seed: Optional. Can be any data type
+ * param: {Any Datatype} seed: Optional. Can be any data type
  * 
- * return: {any array} current:  Can be any data type. Will return a single value for the returned items after the iteration
+ * return: {array} current:  Can be any data type. Will return a single value for the returned items after the iteration
  * 
  */
  
@@ -404,11 +404,11 @@ module.exports.reduce = reduce;
  * 
  * extend: Takes in 2 or more objects and updates the first object with the second object's properties/values. It will return the updated object(s).
  * 
- * param: {any object} object: object 1 which will be changer
+ * param: {object} object: object 1 which will be changer
  * 
- * param: {any object} object: object n which will overwrite object 1 with the same keys
+ * param: {object} object: object n which will overwrite object 1 with the same keys
  * 
- * return: {any object} object:  object 1 updated with the properties of object 2
+ * return: {object} object:  object 1 updated with the properties of object 2
  */
  
  function extend(object) {
