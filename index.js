@@ -212,7 +212,7 @@ module.exports.unique = unique;
  * 
  * param: {array} array: an array of different datatypes and values
  * 
- * param: {a function} test: test function used to filter out the collection by testing and filtering whatever we want it to with it's callback function.
+ * param: {a function} test: Our test function is called on our input collection. The test function used to filter out the collection by testing and filtering whatever we want it to with it's callback function.
  * 
  * return: {a array} filtered array: new filtered array of values without the filtered out values from the test function running on the original array
  * 
